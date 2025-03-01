@@ -77,7 +77,7 @@ def clean_json_output(response):
     return re.sub(r"```json(.*?)```", r"\1", response, flags=re.DOTALL).strip()
 
 def main():
-    url = 'https://www.thesouledstore.com'
+    url = os.getenv("url_to_scrape")
     site_maps_xml = get_site_maps(url)
     site_maps = convert_site_map_to_array(site_maps_xml)
 
